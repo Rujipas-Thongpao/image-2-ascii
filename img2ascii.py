@@ -39,14 +39,14 @@ def image_to_ascii(image_path,store_path, new_width=100, pattern='a'):
     match pattern:
         case 'n':
             select_pattern = ASCII_CHARS
-        case 'b':
+        case 'fb':
             select_pattern = BLOCKS_CHARS 
-        case 'd':
+        case 'bp':
             select_pattern = BRAILLE_CHARS
         case _:
             select_pattern = ASCII_CHARS
 
-    if(pattern != 'p'):
+    if(pattern != 'hb'):
         image = resize_image(image, new_width)
         rgbImage = image.convert('RGB')
         size = rgbImage.size;
